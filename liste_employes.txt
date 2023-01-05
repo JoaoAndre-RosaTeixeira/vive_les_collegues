@@ -1,0 +1,8 @@
+Nom, Prénom, Date embauche, Poste
+Roberts, Julia, 10/10/2022, Patronne
+Doe, John, 11/10/2022, Ingénieur
+Depp, Johnny, 11/10/2022, Concierge
+Parker, Peter, 01/10/2022, stagiaire
+Sylvester, Stallone, 15/10/2022, manager
+L'Ourson, Winnie, 22/10/2022, cuisinier
+Potter, Harry, 25/10/2022, ingénieur R&D

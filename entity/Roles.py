@@ -1,0 +1,2 @@
+class Roles:
+    roles = ["stagiaire", "Directeur général", "Digital Brand Manager", "Responsable communication", "Responsable marketing", "Directeur des opérations", "Directeur de site industriel", "Secrétaire général", "Directeur administratif et financier", "Chargé de communication", "directeur du système d’information"]
