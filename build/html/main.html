@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienveue dans la documentation de vive les collegues’s ! &mdash; Documentation vive les collegues </title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Welcome to vive les collegues’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> vive les collegues
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bienveue dans la documentation de vive les collegues’s !</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">vive les collegues</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Bienveue dans la documentation de vive les collegues’s !</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/main.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bienveue-dans-la-documentation-de-vive-les-collegues-s">
+<h1>Bienveue dans la documentation de vive les collegues’s !<a class="headerlink" href="#bienveue-dans-la-documentation-de-vive-les-collegues-s" title="Lien permanent vers cette rubrique"></a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">git</span> <span class="kn">import</span> <span class="n">Repo</span>
+
+<span class="c1"># import gitlab</span>
+<span class="c1"># from gitlab.v4.objects import GroupMergeRequest</span>
+
+<span class="c1"># Import de la classe Employe et Roles depuis le module entity</span>
+<span class="kn">from</span> <span class="nn">entity.Employe</span> <span class="kn">import</span> <span class="n">Employe</span>
+<span class="kn">import</span> <span class="nn">inquirer</span>
+<span class="kn">from</span> <span class="nn">entity.Roles</span> <span class="kn">import</span> <span class="n">Roles</span>
+
+
+<span class="c1"># Définition de la fonction automatise_reference_employes</span>
+<span class="k">def</span> <span class="nf">automatise_reference_employes</span><span class="p">():</span>
+    <span class="c1"># Création d&#39;une instance de la classe Employe</span>
+    <span class="n">new_employer</span> <span class="o">=</span> <span class="n">Employe</span><span class="p">()</span>
+    <span class="c1"># Création d&#39;une instance de la classe Roles</span>
+    <span class="n">roles</span> <span class="o">=</span> <span class="n">Roles</span><span class="p">()</span>
+
+    <span class="c1"># Définition de la fonction add_name_class</span>
+    <span class="k">def</span> <span class="nf">add_name_class</span><span class="p">(</span><span class="n">str_class_name</span><span class="p">):</span>
+        <span class="c1"># Initialisation de la variable class_name</span>
+        <span class="n">class_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="c1"># Définition de la fonction input_name</span>
+        <span class="k">def</span> <span class="nf">input_name</span><span class="p">():</span>
+            <span class="c1"># Demande de saisie de l&#39;utilisateur</span>
+            <span class="k">return</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;qu&#39;elle est le </span><span class="si">{</span><span class="n">str_class_name</span><span class="si">}</span><span class="s2"> de l&#39;employé a ajouter ? &quot;</span><span class="p">)</span>
+
+        <span class="c1"># Récupération de la saisie de l&#39;utilisateur</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">while</span> <span class="n">response</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">actual_input</span> <span class="o">=</span> <span class="n">input_name</span><span class="p">()</span>
+
+            <span class="c1"># Vérifie que la saisie de l&#39;utilisateur est une chaîne de caractères non vide et composee uniquement de lettres</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">actual_input</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">actual_input</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+                <span class="c1"># Met la saisie en minuscules et stocke la valeur dans class_name</span>
+                <span class="n">class_name</span> <span class="o">=</span> <span class="n">actual_input</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="c1"># Demande confirmation à l&#39;utilisateur</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;le </span><span class="si">{</span><span class="n">str_class_name</span><span class="si">}</span><span class="s2"> de l&#39;employer est bien </span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s2"> ?&quot;</span>
+                <span class="c1"># Si la réponse est négative, relance la fonction</span>
+                <span class="k">if</span> <span class="n">confirm_questions</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="n">add_name_class</span><span class="p">(</span><span class="n">str_class_name</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">response</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="c1"># Si la saisie n&#39;est pas valide, affiche un message d&#39;erreur et relance la fonction</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Renvoie la valeur de class_name</span>
+        <span class="k">return</span> <span class="n">class_name</span>
+
+    <span class="c1"># Définition de la fonction add_datetime_class_date</span>
+    <span class="k">def</span> <span class="nf">add_datetime_class_date</span><span class="p">():</span>
+        <span class="c1"># Demande de saisie de l&#39;utilisateur</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;qu&#39;elle est la date d&#39;entrée dans l&#39;entreprise de l&#39;employé </span><span class="si">{</span><span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span><span class="si">}</span><span class="s2"> ? &quot;</span><span class="p">)</span>
+
+        <span class="c1"># Liste des éléments à saisir (année, mois, jour)</span>
+        <span class="n">choose_D_M_Y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;année&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Définition de la fonction date_time_creator</span>
+        <span class="k">def</span> <span class="nf">date_time_creator</span><span class="p">():</span>
+            <span class="c1"># Initialisation de la liste date_list</span>
+
+            <span class="n">date_list</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">i_dmy</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="c1"># Définition de la fonction input_date</span>
+            <span class="k">def</span> <span class="nf">input_date</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+                <span class="c1"># Demande de saisie de l&#39;utilisateur</span>
+                <span class="k">return</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2"> : &quot;</span><span class="p">)</span>
+
+            <span class="c1"># Définition de la fonction D_M_Y_for</span>
+            <span class="k">def</span> <span class="nf">D_M_Y_for</span><span class="p">():</span>
+                <span class="c1"># Récupération de l&#39;élément courant de la liste choose_D_M_Y</span>
+                <span class="n">D_M_Y</span> <span class="o">=</span> <span class="n">choose_D_M_Y</span><span class="p">[</span><span class="n">i_dmy</span><span class="p">]</span>
+                <span class="c1"># Récupération de la saisie de l&#39;utilisateur</span>
+                <span class="n">res_input</span> <span class="o">=</span> <span class="n">input_date</span><span class="p">(</span><span class="n">D_M_Y</span><span class="p">)</span>
+                <span class="c1"># Vérifie que la saisie de l&#39;utilisateur est une chaîne de caractères non vide et composee uniquement de chiffres</span>
+                <span class="k">if</span> <span class="n">res_input</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">res_input</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="c1"># Si la saisie n&#39;est pas valide, affiche un message d&#39;erreur</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;erreur entrer seulement un nombre&quot;</span><span class="p">)</span>
+                    <span class="c1"># Relance la fonction</span>
+                    <span class="n">D_M_Y_for</span><span class="p">()</span>
+                <span class="c1"># Si l&#39;élément courant est &quot;année&quot;, vérifie que la saisie comporte bien 4 chiffres</span>
+                <span class="k">if</span> <span class="n">D_M_Y</span> <span class="o">==</span> <span class="n">choose_D_M_Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res_input</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
+                        <span class="c1"># Si la saisie n&#39;est pas valide, affiche un message d&#39;erreur</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;erreur l&#39;année doit etre composer de 4 chiffres&quot;</span><span class="p">)</span>
+                        <span class="c1"># Relance la fonction</span>
+                        <span class="n">D_M_Y_for</span><span class="p">()</span>
+                        <span class="k">return</span>
+                <span class="c1"># Si l&#39;élément courant est &quot;mois&quot;, vérifie que la saisie est un nombre compris entre 1 et 12</span>
+                <span class="k">if</span> <span class="n">D_M_Y</span> <span class="o">==</span> <span class="n">choose_D_M_Y</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">res_input</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">12</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">res_input</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="c1"># Si la saisie n&#39;est pas valide, affiche un message d&#39;erreur</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;erreur le mois doit etre compris entre 1 et 12&quot;</span><span class="p">)</span>
+                        <span class="c1"># Relance la fonction</span>
+                        <span class="n">D_M_Y_for</span><span class="p">()</span>
+                        <span class="k">return</span>
+                <span class="c1"># Si l&#39;élément courant est &quot;jour&quot;, vérifie que la saisie est un nombre compris entre 1 et 31</span>
+                <span class="k">if</span> <span class="n">D_M_Y</span> <span class="o">==</span> <span class="n">choose_D_M_Y</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">res_input</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">res_input</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">31</span><span class="p">:</span>
+                        <span class="c1"># Si la saisie n&#39;est pas valide, affiche un message d&#39;erreur</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;erreur le jour doit etre compris entre 1 et 31&quot;</span><span class="p">)</span>
+                        <span class="c1"># Relance la fonction</span>
+                        <span class="n">D_M_Y_for</span><span class="p">()</span>
+                        <span class="k">return</span>
+                <span class="c1"># Convertit la saisie en entier et stocke la valeur dans actual_input</span>
+
+                <span class="n">actual_input</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">res_input</span><span class="p">)</span>
+                <span class="c1"># Demande confirmation à l&#39;utilisateur</span>
+                <span class="n">year_question</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;le </span><span class="si">{</span><span class="n">D_M_Y</span><span class="si">}</span><span class="s2"> d&#39;entrer est bien </span><span class="si">{</span><span class="n">actual_input</span><span class="si">}</span><span class="s2"> ?&quot;</span>
+                <span class="c1"># Si la réponse est négative, relance la fonction</span>
+                <span class="k">if</span> <span class="n">confirm_questions</span><span class="p">(</span><span class="n">year_question</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="n">D_M_Y_for</span><span class="p">()</span>
+                    <span class="k">return</span>
+                <span class="c1"># Ajoute la valeur de actual_input à la liste date_list</span>
+                <span class="n">date_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actual_input</span><span class="p">)</span>
+
+            <span class="c1"># Pour chaque élément de la liste choose_D_M_Y, appelle la fonction D_M_Y_for</span>
+            <span class="k">for</span> <span class="n">D_M_Y</span> <span class="ow">in</span> <span class="n">choose_D_M_Y</span><span class="p">:</span>
+                <span class="n">D_M_Y_for</span><span class="p">()</span>
+                <span class="c1"># Incrémente la valeur de i_dmy</span>
+                <span class="n">i_dmy</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="c1"># Renvoie la date créée à partir de la liste date_list</span>
+            <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">date_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">date_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">date_list</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+        <span class="c1"># Appelle la fonction date_time_creator et renvoie la valeur renvoyée</span>
+        <span class="k">return</span> <span class="n">date_time_creator</span><span class="p">()</span>
+
+        <span class="c1"># Définition de la fonction add_role</span>
+    <span class="k">def</span> <span class="nf">add_role</span><span class="p">():</span>
+        <span class="c1"># Création d&#39;un questionnaire avec la bibliothèque inquirer</span>
+        <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">inquirer</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">,</span>
+                          <span class="n">message</span><span class="o">=</span><span class="s2">&quot;quel est sont poste ?&quot;</span><span class="p">,</span>
+                          <span class="n">choices</span><span class="o">=</span><span class="n">roles</span><span class="o">.</span><span class="n">roles</span><span class="p">,</span>
+                          <span class="p">),</span>
+        <span class="p">]</span>
+        <span class="c1"># Récupération des réponses de l&#39;utilisateur au questionnaire</span>
+        <span class="n">answers</span> <span class="o">=</span> <span class="n">inquirer</span><span class="o">.</span><span class="n">prompt</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+        <span class="c1"># Demande confirmation à l&#39;utilisateur</span>
+        <span class="n">role_question</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Le poste actuel de </span><span class="si">{</span><span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span><span class="si">}</span><span class="s2"> est bien </span><span class="si">{</span><span class="n">answers</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> ?&quot;</span>
+        <span class="c1"># Si la réponse est négative, relance la fonction</span>
+        <span class="k">if</span> <span class="n">confirm_questions</span><span class="p">(</span><span class="n">role_question</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">add_role</span><span class="p">()</span>
+        <span class="c1"># Renvoie la valeur de la réponse de l&#39;utilisateur</span>
+        <span class="k">return</span> <span class="n">answers</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Demande de saisie de l&#39;utilisateur</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ajout d&#39;un employé&quot;</span><span class="p">)</span>
+        <span class="c1"># Appelle la fonction add_name_class et affecte la valeur renvoyée à la propriété nom de l&#39;instance new_employer</span>
+        <span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">add_name_class</span><span class="p">(</span><span class="s2">&quot;nom&quot;</span><span class="p">)</span>
+        <span class="c1"># Appelle la fonction add_name_class et affecte la valeur renvoyée à la propriété prenom de l&#39;instance new_employer</span>
+        <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span> <span class="o">=</span> <span class="n">add_name_class</span><span class="p">(</span><span class="s2">&quot;prenom&quot;</span><span class="p">)</span>
+        <span class="c1"># Appelle la fonction add_datetime_class_date et affecte la valeur renvoyée à la propriété date_entre de l&#39;instance new_employer</span>
+        <span class="n">new_employer</span><span class="o">.</span><span class="n">date_entre</span> <span class="o">=</span> <span class="n">add_datetime_class_date</span><span class="p">()</span>
+
+        <span class="c1"># Appelle la fonction add_role et affecte la valeur renvoyée à la propriété role de l&#39;instance new_employer</span>
+        <span class="n">new_employer</span><span class="o">.</span><span class="n">role</span> <span class="o">=</span> <span class="n">add_role</span><span class="p">()</span>
+
+        <span class="c1"># Ouvre le fichier &quot;employes.csv&quot; en mode &quot;a&quot; (ajout de données à la fin du fichier)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;employes.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+            <span class="c1"># Création d&#39;un objet &quot;writer&quot; qui va écrire dans le fichier csv</span>
+            <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="c1"># Ajoute les données de l&#39;instance new_employer au fichier csv, sous forme de liste</span>
+            <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">date_entre</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">role</span><span class="p">])</span>
+
+        <span class="c1"># Récupère l&#39;instance du dépôt git courant</span>
+        <span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">()</span>
+        <span class="c1"># Vérifie que le dépôt n&#39;est pas en &quot;detached HEAD&quot; state</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="n">repo</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">is_detached</span>
+
+        <span class="c1"># Création d&#39;un commit avec un message par défaut</span>
+        <span class="n">repo</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="s2">&quot;Ajout de l&#39;employé </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span><span class="p">))</span>
+        <span class="c1"># Pousse le commit sur le dépôt distant associé au dépôt local</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="s2">&quot;origin&quot;</span><span class="p">)</span>
+        <span class="n">origin</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+
+    <span class="c1"># Cette fonction demande à l&#39;utilisateur de confirmer quelque chose</span>
+    <span class="c1"># et renvoie un booléen en fonction de sa réponse</span>
+    <span class="k">def</span> <span class="nf">confirm_questions</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+        <span class="c1"># Crée une liste de questions d&#39;inquiry</span>
+        <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">inquirer</span><span class="o">.</span><span class="n">Confirm</span><span class="p">(</span><span class="s2">&quot;confirm&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+                             <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="c1"># Demande à l&#39;utilisateur de répondre aux questions</span>
+        <span class="n">answers</span> <span class="o">=</span> <span class="n">inquirer</span><span class="o">.</span><span class="n">prompt</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+
+        <span class="c1"># Renvoie False si l&#39;utilisateur n&#39;a pas confirmé</span>
+        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="s2">&quot;confirm&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># Cette fonction est la fonction principale qui est appelée à la fin du script</span>
+    <span class="k">def</span> <span class="nf">start_programme</span><span class="p">():</span>
+        <span class="c1"># Capture les informations de l&#39;employé et les stock dans un objet de classe</span>
+        <span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">add_name_class</span><span class="p">(</span><span class="s2">&quot;nom&quot;</span><span class="p">)</span>
+        <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span> <span class="o">=</span> <span class="n">add_name_class</span><span class="p">(</span><span class="s2">&quot;prénom&quot;</span><span class="p">)</span>
+        <span class="n">new_employer</span><span class="o">.</span><span class="n">date_entrer_entreprise</span> <span class="o">=</span> <span class="n">add_datetime_class_date</span><span class="p">()</span>
+        <span class="n">new_employer</span><span class="o">.</span><span class="n">role</span> <span class="o">=</span> <span class="n">add_role</span><span class="p">()</span>
+
+        <span class="c1"># Affiche les informations de l&#39;employé</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">new_employer</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span>
+
+        <span class="c1"># Définit les noms de champs pour le fichier CSV</span>
+        <span class="n">field_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">,</span> <span class="s1">&#39;prenom&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;poste&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Crée un dictionnaire des informations de l&#39;employé à écrire dans le CSV</span>
+        <span class="n">to_csv_save</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;nom&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span>
+            <span class="s2">&quot;prenom&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span><span class="p">,</span>
+            <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">get_date</span><span class="p">(),</span>
+            <span class="s2">&quot;poste&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">role</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Ouvre le fichier CSV et écrit les informations de l&#39;employé</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ressource/employees.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_object</span><span class="p">:</span>
+            <span class="c1"># Crée un objet DictWriter et écrit les informations de l&#39;employé</span>
+            <span class="n">dictwriter_object</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">f_object</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">field_names</span><span class="p">)</span>
+            <span class="n">dictwriter_object</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">to_csv_save</span><span class="p">)</span>
+            <span class="c1"># Ferme l&#39;objet de fichier</span>
+            <span class="n">f_object</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="c1"># Demande à l&#39;utilisateur s&#39;il souhaite ajouter un autre employé</span>
+        <span class="k">if</span> <span class="n">confirm_questions</span><span class="p">(</span><span class="s2">&quot;ajouter un autre employé ?&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="c1"># S&#39;il le souhaite, appelle à nouveau cette fonction</span>
+            <span class="k">return</span> <span class="n">automatise_reference_employes</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Sinon, essaie de pousser les modifications vers un dépôt Git</span>
+            <span class="n">PATH_OF_GIT_REPO</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;.git&#39;</span>  <span class="c1"># assurez-vous que le dossier .git est correctement configuré</span>
+            <span class="n">COMMIT_MESSAGE</span> <span class="o">=</span> <span class="s1">&#39;commit from secretary&#39;</span>
+
+        <span class="k">def</span> <span class="nf">git_push</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># Initialise le dépôt et ajoute, valide et pousse les modifications</span>
+                <span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="n">PATH_OF_GIT_REPO</span><span class="p">)</span>
+                <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">update</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">repo</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">COMMIT_MESSAGE</span><span class="p">)</span>
+                <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">checkout</span><span class="p">(</span><span class="s2">&quot;secretary&quot;</span><span class="p">)</span>
+                <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">&#39;origin&#39;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;good push&#39;</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="c1"># Affiche un message d&#39;erreur s&#39;il y a un problème</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Une erreur est survenue lors de la mise à jour du dépôt&#39;</span><span class="p">)</span>
+
+            <span class="n">git_push</span><span class="p">()</span>
+
+
+
+    <span class="n">start_programme</span><span class="p">()</span>
+
+
+<span class="n">automatise_reference_employes</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to vive les collegues’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Jo le taxi.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
