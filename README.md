@@ -1,4 +1,4 @@
-doc disponible sur http://localhost:63342/vivelescollegues_joao-main/build/html/ 
+doc disponible sur http://localhost:63342/vivelescollegues_joao-main/build/html/?_ijt=5s6nle3celi8ccvjkjvhblfph 
 
 
 before run this code pip install necessary is :
