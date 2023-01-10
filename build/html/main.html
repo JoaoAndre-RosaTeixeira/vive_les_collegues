@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bienveue dans la documentation de vive les collegues’s ! &mdash; Documentation vive les collegues </title>
+  <title>Bienvenue dans la documentation de vive les collegues’s ! &mdash; Documentation vive les collegues </title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,7 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="prev" title="Welcome to vive les collegues’s documentation!" href="index.html" /> 
+    <link rel="next" title="Ici je presente comment j’ai creer les class lié a mon main" href="class_creation.html" />
+    <link rel="prev" title="Bienvenue dans la documentation de vive les collegues’s !" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,7 +42,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Bienveue dans la documentation de vive les collegues’s !</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bienvenue dans la documentation de vive les collegues’s !</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#les-imports-a-faire">Les imports à faire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#function-creation-des-questions">function creation des questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sauvegarder-les-nouvelles-donnees-en-csv">Sauvegarder les nouvelles données en csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fonction-qui-sauvegarde-les-donnees-dans-des-classes">Fonction qui sauvegarde les données dans des classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_creation.html">Ici je presente comment j’ai creer les class lié a mon main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_creation.html#la-class-employee">La class employée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_creation.html#la-class-roles">La class roles</a></li>
 </ul>
 
         </div>
@@ -58,7 +68,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Bienveue dans la documentation de vive les collegues’s !</li>
+      <li class="breadcrumb-item active">Bienvenue dans la documentation de vive les collegues’s !</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/main.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -68,22 +78,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="bienveue-dans-la-documentation-de-vive-les-collegues-s">
-<h1>Bienveue dans la documentation de vive les collegues’s !<a class="headerlink" href="#bienveue-dans-la-documentation-de-vive-les-collegues-s" title="Lien permanent vers cette rubrique"></a></h1>
+  <section id="bienvenue-dans-la-documentation-de-vive-les-collegues-s">
+<h1>Bienvenue dans la documentation de vive les collegues’s !<a class="headerlink" href="#bienvenue-dans-la-documentation-de-vive-les-collegues-s" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Se code est une fonction appelée automatise_reference_employes() qui permet de créer une référence d’un employé en demandant à l’utilisateur de saisir certaines informations telles que le nom, le prénom, la date d’entrée dans l’entreprise et le poste de l’employé.
+La fonction utilise plusieurs sous-fonctions pour demander ces informations à l’utilisateur et vérifier que les entrées sont valides. La fonction add_name_class() demande et vérifie le nom ou le prénom de l’employé, tandis que la fonction add_datetime_class_date() demande et vérifie la date d’entrée de l’employé dans l’entreprise. La fonction add_role() utilise la bibliothèque inquirer pour afficher une liste de postes disponibles et demander à l’utilisateur de sélectionner un poste pour l’employé.
+Enfin, la fonction confirm_questions() affiche une question à l’utilisateur et attend une réponse pour savoir si l’entrée de l’utilisateur est correcte ou non. Si l’entrée de l’utilisateur n’est pas correcte, les fonctions pertinentes sont appelées à nouveau jusqu’à ce qu’une entrée valide soit fournie.
+Il y a également plusieurs lignes de commentaire qui ne sont pas utilisées dans le code actuellement exécuté. Ces lignes de commentaire semblent indiquer que le code pourrait être utilisé pour travailler avec l’API GitLab et les demandes de fusion de groupe.</p>
+<section id="les-imports-a-faire">
+<h2>Les imports à faire<a class="headerlink" href="#les-imports-a-faire" title="Lien permanent vers cette rubrique"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">from</span> <span class="nn">git</span> <span class="kn">import</span> <span class="n">Repo</span>
-
-<span class="c1"># import gitlab</span>
-<span class="c1"># from gitlab.v4.objects import GroupMergeRequest</span>
-
-<span class="c1"># Import de la classe Employe et Roles depuis le module entity</span>
 <span class="kn">from</span> <span class="nn">entity.Employe</span> <span class="kn">import</span> <span class="n">Employe</span>
 <span class="kn">import</span> <span class="nn">inquirer</span>
 <span class="kn">from</span> <span class="nn">entity.Roles</span> <span class="kn">import</span> <span class="n">Roles</span>
-
-
-<span class="c1"># Définition de la fonction automatise_reference_employes</span>
+</pre></div>
+</div>
+</section>
+<section id="function-creation-des-questions">
+<h2>function creation des questions<a class="headerlink" href="#function-creation-des-questions" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Création de la fonction qui permet de poser des questions a l’utilisateur via le terminal et recuperer les memes informations</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de la fonction automatise_reference_employes</span>
 <span class="k">def</span> <span class="nf">automatise_reference_employes</span><span class="p">():</span>
     <span class="c1"># Création d&#39;une instance de la classe Employe</span>
     <span class="n">new_employer</span> <span class="o">=</span> <span class="n">Employe</span><span class="p">()</span>
@@ -203,7 +218,7 @@
         <span class="c1"># Appelle la fonction date_time_creator et renvoie la valeur renvoyée</span>
         <span class="k">return</span> <span class="n">date_time_creator</span><span class="p">()</span>
 
-        <span class="c1"># Définition de la fonction add_role</span>
+    <span class="c1"># Définition de la fonction add_role</span>
     <span class="k">def</span> <span class="nf">add_role</span><span class="p">():</span>
         <span class="c1"># Création d&#39;un questionnaire avec la bibliothèque inquirer</span>
         <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
@@ -233,93 +248,104 @@
 
         <span class="c1"># Appelle la fonction add_role et affecte la valeur renvoyée à la propriété role de l&#39;instance new_employer</span>
         <span class="n">new_employer</span><span class="o">.</span><span class="n">role</span> <span class="o">=</span> <span class="n">add_role</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="sauvegarder-les-nouvelles-donnees-en-csv">
+<h2>Sauvegarder les nouvelles données en csv<a class="headerlink" href="#sauvegarder-les-nouvelles-donnees-en-csv" title="Lien permanent vers cette rubrique"></a></h2>
+<p>permet de sauvegarder les données en CSV ainsi que de commit et push automatiquement sur git les données il reste du travail a faire</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ouvre le fichier &quot;employes.csv&quot; en mode &quot;a&quot; (ajout de données à la fin du fichier)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;employes.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="c1"># Création d&#39;un objet &quot;writer&quot; qui va écrire dans le fichier csv</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="c1"># Ajoute les données de l&#39;instance new_employer au fichier csv, sous forme de liste</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">date_entre</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">role</span><span class="p">])</span>
 
-        <span class="c1"># Ouvre le fichier &quot;employes.csv&quot; en mode &quot;a&quot; (ajout de données à la fin du fichier)</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;employes.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
-            <span class="c1"># Création d&#39;un objet &quot;writer&quot; qui va écrire dans le fichier csv</span>
-            <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-            <span class="c1"># Ajoute les données de l&#39;instance new_employer au fichier csv, sous forme de liste</span>
-            <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">date_entre</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">role</span><span class="p">])</span>
+<span class="c1"># Récupère l&#39;instance du dépôt git courant</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">()</span>
+<span class="c1"># Vérifie que le dépôt n&#39;est pas en &quot;detached HEAD&quot; state</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">repo</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">is_detached</span>
 
-        <span class="c1"># Récupère l&#39;instance du dépôt git courant</span>
-        <span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">()</span>
-        <span class="c1"># Vérifie que le dépôt n&#39;est pas en &quot;detached HEAD&quot; state</span>
-        <span class="k">assert</span> <span class="ow">not</span> <span class="n">repo</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">is_detached</span>
+<span class="c1"># Création d&#39;un commit avec un message par défaut</span>
+<span class="n">repo</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="s2">&quot;Ajout de l&#39;employé </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span><span class="p">))</span>
+<span class="c1"># Pousse le commit sur le dépôt distant associé au dépôt local</span>
+<span class="n">origin</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="s2">&quot;origin&quot;</span><span class="p">)</span>
+<span class="n">origin</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cette fonction demande à l&#39;utilisateur de confirmer quelque chose</span>
+<span class="c1"># et renvoie un booléen en fonction de sa réponse</span>
+<span class="k">def</span> <span class="nf">confirm_questions</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="c1"># Crée une liste de questions d&#39;inquiry</span>
+    <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">inquirer</span><span class="o">.</span><span class="n">Confirm</span><span class="p">(</span><span class="s2">&quot;confirm&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+                         <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="c1"># Demande à l&#39;utilisateur de répondre aux questions</span>
+    <span class="n">answers</span> <span class="o">=</span> <span class="n">inquirer</span><span class="o">.</span><span class="n">prompt</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
 
-        <span class="c1"># Création d&#39;un commit avec un message par défaut</span>
-        <span class="n">repo</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="s2">&quot;Ajout de l&#39;employé </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span><span class="p">))</span>
-        <span class="c1"># Pousse le commit sur le dépôt distant associé au dépôt local</span>
-        <span class="n">origin</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="s2">&quot;origin&quot;</span><span class="p">)</span>
-        <span class="n">origin</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="c1"># Renvoie False si l&#39;utilisateur n&#39;a pas confirmé</span>
+    <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="s2">&quot;confirm&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="fonction-qui-sauvegarde-les-donnees-dans-des-classes">
+<h2>Fonction qui sauvegarde les données dans des classes<a class="headerlink" href="#fonction-qui-sauvegarde-les-donnees-dans-des-classes" title="Lien permanent vers cette rubrique"></a></h2>
+<p>cette fonction apelle la fonction precedente qui pose des question a l’utilisateur et sauvegarde les données dans des classes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;Cette fonction est la fonction principale qui est appelée à la fin du script&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">start_programme</span><span class="p">():</span>
+    <span class="c1"># Capture les informations de l&#39;employé et les stock dans un objet de classe</span>
+    <span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">add_name_class</span><span class="p">(</span><span class="s2">&quot;nom&quot;</span><span class="p">)</span>
+    <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span> <span class="o">=</span> <span class="n">add_name_class</span><span class="p">(</span><span class="s2">&quot;prénom&quot;</span><span class="p">)</span>
+    <span class="n">new_employer</span><span class="o">.</span><span class="n">date_entrer_entreprise</span> <span class="o">=</span> <span class="n">add_datetime_class_date</span><span class="p">()</span>
+    <span class="n">new_employer</span><span class="o">.</span><span class="n">role</span> <span class="o">=</span> <span class="n">add_role</span><span class="p">()</span>
 
-    <span class="c1"># Cette fonction demande à l&#39;utilisateur de confirmer quelque chose</span>
-    <span class="c1"># et renvoie un booléen en fonction de sa réponse</span>
-    <span class="k">def</span> <span class="nf">confirm_questions</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
-        <span class="c1"># Crée une liste de questions d&#39;inquiry</span>
-        <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="n">inquirer</span><span class="o">.</span><span class="n">Confirm</span><span class="p">(</span><span class="s2">&quot;confirm&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
-                             <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-        <span class="p">]</span>
-        <span class="c1"># Demande à l&#39;utilisateur de répondre aux questions</span>
-        <span class="n">answers</span> <span class="o">=</span> <span class="n">inquirer</span><span class="o">.</span><span class="n">prompt</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+    <span class="c1"># Affiche les informations de l&#39;employé</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">new_employer</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span>
 
-        <span class="c1"># Renvoie False si l&#39;utilisateur n&#39;a pas confirmé</span>
-        <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="s2">&quot;confirm&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span>
+    <span class="c1"># Définit les noms de champs pour le fichier CSV</span>
+    <span class="n">field_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">,</span> <span class="s1">&#39;prenom&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;poste&#39;</span><span class="p">]</span>
 
-    <span class="c1"># Cette fonction est la fonction principale qui est appelée à la fin du script</span>
-    <span class="k">def</span> <span class="nf">start_programme</span><span class="p">():</span>
-        <span class="c1"># Capture les informations de l&#39;employé et les stock dans un objet de classe</span>
-        <span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">add_name_class</span><span class="p">(</span><span class="s2">&quot;nom&quot;</span><span class="p">)</span>
-        <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span> <span class="o">=</span> <span class="n">add_name_class</span><span class="p">(</span><span class="s2">&quot;prénom&quot;</span><span class="p">)</span>
-        <span class="n">new_employer</span><span class="o">.</span><span class="n">date_entrer_entreprise</span> <span class="o">=</span> <span class="n">add_datetime_class_date</span><span class="p">()</span>
-        <span class="n">new_employer</span><span class="o">.</span><span class="n">role</span> <span class="o">=</span> <span class="n">add_role</span><span class="p">()</span>
+    <span class="c1"># Crée un dictionnaire des informations de l&#39;employé à écrire dans le CSV</span>
+    <span class="n">to_csv_save</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;nom&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span>
+        <span class="s2">&quot;prenom&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span><span class="p">,</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">get_date</span><span class="p">(),</span>
+        <span class="s2">&quot;poste&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">role</span>
+    <span class="p">}</span>
 
-        <span class="c1"># Affiche les informations de l&#39;employé</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">new_employer</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span>
+    <span class="c1"># Ouvre le fichier CSV et écrit les informations de l&#39;employé</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ressource/employees.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_object</span><span class="p">:</span>
+        <span class="c1"># Crée un objet DictWriter et écrit les informations de l&#39;employé</span>
+        <span class="n">dictwriter_object</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">f_object</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">field_names</span><span class="p">)</span>
+        <span class="n">dictwriter_object</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">to_csv_save</span><span class="p">)</span>
+        <span class="c1"># Ferme l&#39;objet de fichier</span>
+        <span class="n">f_object</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-        <span class="c1"># Définit les noms de champs pour le fichier CSV</span>
-        <span class="n">field_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">,</span> <span class="s1">&#39;prenom&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;poste&#39;</span><span class="p">]</span>
+    <span class="c1"># Demande à l&#39;utilisateur s&#39;il souhaite ajouter un autre employé</span>
+    <span class="k">if</span> <span class="n">confirm_questions</span><span class="p">(</span><span class="s2">&quot;ajouter un autre employé ?&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="c1"># S&#39;il le souhaite, appelle à nouveau cette fonction</span>
+        <span class="k">return</span> <span class="n">automatise_reference_employes</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Sinon, essaie de pousser les modifications vers un dépôt Git</span>
+        <span class="n">PATH_OF_GIT_REPO</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;.git&#39;</span>  <span class="c1"># assurez-vous que le dossier .git est correctement configuré</span>
+        <span class="n">COMMIT_MESSAGE</span> <span class="o">=</span> <span class="s1">&#39;commit from secretary&#39;</span>
 
-        <span class="c1"># Crée un dictionnaire des informations de l&#39;employé à écrire dans le CSV</span>
-        <span class="n">to_csv_save</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;nom&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span>
-            <span class="s2">&quot;prenom&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">prenom</span><span class="p">,</span>
-            <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">get_date</span><span class="p">(),</span>
-            <span class="s2">&quot;poste&quot;</span><span class="p">:</span> <span class="n">new_employer</span><span class="o">.</span><span class="n">role</span>
-        <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">git_push</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Initialise le dépôt et ajoute, valide et pousse les modifications</span>
+            <span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="n">PATH_OF_GIT_REPO</span><span class="p">)</span>
+            <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">update</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">repo</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">COMMIT_MESSAGE</span><span class="p">)</span>
+            <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">checkout</span><span class="p">(</span><span class="s2">&quot;secretary&quot;</span><span class="p">)</span>
+            <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">&#39;origin&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;good push&#39;</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="c1"># Affiche un message d&#39;erreur s&#39;il y a un problème</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Une erreur est survenue lors de la mise à jour du dépôt&#39;</span><span class="p">)</span>
 
-        <span class="c1"># Ouvre le fichier CSV et écrit les informations de l&#39;employé</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ressource/employees.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_object</span><span class="p">:</span>
-            <span class="c1"># Crée un objet DictWriter et écrit les informations de l&#39;employé</span>
-            <span class="n">dictwriter_object</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">f_object</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">field_names</span><span class="p">)</span>
-            <span class="n">dictwriter_object</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">to_csv_save</span><span class="p">)</span>
-            <span class="c1"># Ferme l&#39;objet de fichier</span>
-            <span class="n">f_object</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-        <span class="c1"># Demande à l&#39;utilisateur s&#39;il souhaite ajouter un autre employé</span>
-        <span class="k">if</span> <span class="n">confirm_questions</span><span class="p">(</span><span class="s2">&quot;ajouter un autre employé ?&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">False</span><span class="p">:</span>
-            <span class="c1"># S&#39;il le souhaite, appelle à nouveau cette fonction</span>
-            <span class="k">return</span> <span class="n">automatise_reference_employes</span><span class="p">()</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># Sinon, essaie de pousser les modifications vers un dépôt Git</span>
-            <span class="n">PATH_OF_GIT_REPO</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;.git&#39;</span>  <span class="c1"># assurez-vous que le dossier .git est correctement configuré</span>
-            <span class="n">COMMIT_MESSAGE</span> <span class="o">=</span> <span class="s1">&#39;commit from secretary&#39;</span>
-
-        <span class="k">def</span> <span class="nf">git_push</span><span class="p">():</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="c1"># Initialise le dépôt et ajoute, valide et pousse les modifications</span>
-                <span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="n">PATH_OF_GIT_REPO</span><span class="p">)</span>
-                <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">update</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-                <span class="n">repo</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">COMMIT_MESSAGE</span><span class="p">)</span>
-                <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">checkout</span><span class="p">(</span><span class="s2">&quot;secretary&quot;</span><span class="p">)</span>
-                <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">&#39;origin&#39;</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;good push&#39;</span><span class="p">)</span>
-            <span class="k">except</span><span class="p">:</span>
-                <span class="c1"># Affiche un message d&#39;erreur s&#39;il y a un problème</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Une erreur est survenue lors de la mise à jour du dépôt&#39;</span><span class="p">)</span>
-
-            <span class="n">git_push</span><span class="p">()</span>
+        <span class="n">git_push</span><span class="p">()</span>
 
 
 
@@ -330,12 +356,14 @@
 </pre></div>
 </div>
 </section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to vive les collegues’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Bienvenue dans la documentation de vive les collegues’s !" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="class_creation.html" class="btn btn-neutral float-right" title="Ici je presente comment j’ai creer les class lié a mon main" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

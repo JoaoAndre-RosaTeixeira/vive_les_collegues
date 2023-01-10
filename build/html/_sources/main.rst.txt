@@ -1,21 +1,36 @@
-Bienveue dans la documentation de vive les collegues's !
+Bienvenue dans la documentation de vive les collegues's !
 ==============================================
 
+
+Se code est une fonction appelée automatise_reference_employes() qui permet de créer une référence d'un employé en demandant à l'utilisateur de saisir certaines informations telles que le nom, le prénom, la date d'entrée dans l'entreprise et le poste de l'employé.
+La fonction utilise plusieurs sous-fonctions pour demander ces informations à l'utilisateur et vérifier que les entrées sont valides. La fonction add_name_class() demande et vérifie le nom ou le prénom de l'employé, tandis que la fonction add_datetime_class_date() demande et vérifie la date d'entrée de l'employé dans l'entreprise. La fonction add_role() utilise la bibliothèque inquirer pour afficher une liste de postes disponibles et demander à l'utilisateur de sélectionner un poste pour l'employé.
+Enfin, la fonction confirm_questions() affiche une question à l'utilisateur et attend une réponse pour savoir si l'entrée de l'utilisateur est correcte ou non. Si l'entrée de l'utilisateur n'est pas correcte, les fonctions pertinentes sont appelées à nouveau jusqu'à ce qu'une entrée valide soit fournie.
+Il y a également plusieurs lignes de commentaire qui ne sont pas utilisées dans le code actuellement exécuté. Ces lignes de commentaire semblent indiquer que le code pourrait être utilisé pour travailler avec l'API GitLab et les demandes de fusion de groupe.
+
+
+Les imports à faire
+----
 
 .. code-block:: python
 
     import csv
     import datetime
     from git import Repo
-
-    # import gitlab
-    # from gitlab.v4.objects import GroupMergeRequest
-
-    # Import de la classe Employe et Roles depuis le module entity
     from entity.Employe import Employe
     import inquirer
     from entity.Roles import Roles
 
+
+
+
+
+
+function creation des questions
+----
+
+Création de la fonction qui permet de poser des questions a l'utilisateur via le terminal et recuperer les memes informations
+
+.. code-block:: python
 
     # Définition de la fonction automatise_reference_employes
     def automatise_reference_employes():
@@ -137,7 +152,7 @@ Bienveue dans la documentation de vive les collegues's !
             # Appelle la fonction date_time_creator et renvoie la valeur renvoyée
             return date_time_creator()
 
-            # Définition de la fonction add_role
+        # Définition de la fonction add_role
         def add_role():
             # Création d'un questionnaire avec la bibliothèque inquirer
             questions = [
@@ -168,6 +183,14 @@ Bienveue dans la documentation de vive les collegues's !
             # Appelle la fonction add_role et affecte la valeur renvoyée à la propriété role de l'instance new_employer
             new_employer.role = add_role()
 
+Sauvegarder les nouvelles données en csv
+----
+
+permet de sauvegarder les données en CSV ainsi que de commit et push automatiquement sur git les données il reste du travail a faire
+
+
+.. code-block:: python
+
             # Ouvre le fichier "employes.csv" en mode "a" (ajout de données à la fin du fichier)
             with open("employes.csv", "a") as csv_file:
                 # Création d'un objet "writer" qui va écrire dans le fichier csv
@@ -186,6 +209,8 @@ Bienveue dans la documentation de vive les collegues's !
             origin = repo.remote("origin")
             origin.push()
 
+.. code-block:: python
+
         # Cette fonction demande à l'utilisateur de confirmer quelque chose
         # et renvoie un booléen en fonction de sa réponse
         def confirm_questions(message):
@@ -201,7 +226,14 @@ Bienveue dans la documentation de vive les collegues's !
             if answers["confirm"] != True:
                 return False
 
-        # Cette fonction est la fonction principale qui est appelée à la fin du script
+Fonction qui sauvegarde les données dans des classes
+----
+
+cette fonction apelle la fonction precedente qui pose des question a l'utilisateur et sauvegarde les données dans des classes.
+
+.. code-block:: python
+
+        '''Cette fonction est la fonction principale qui est appelée à la fin du script'''
         def start_programme():
             # Capture les informations de l'employé et les stock dans un objet de classe
             new_employer.nom = add_name_class("nom")
@@ -257,9 +289,9 @@ Bienveue dans la documentation de vive les collegues's !
 
 
 
-        start_programme()
+            start_programme()
 
 
-    automatise_reference_employes()
+        automatise_reference_employes()
 
 
